@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreador de Ofertas</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      padding: 30px 0 10px;
+    }
+
+    header img {
+      width: 60px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      color: #00a8ff;
+      font-size: 32px;
+      margin: 5px 40px 15px;
+    }
+
+    .promessa {
+      font-size: 26px;
+      /*font-weight: 600;*/
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .mockup {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #00a8ff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 26px;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 15px 0;
+    }
+
+    .btn:hover {
+      background: #0088cc;
+    }
+
+    .beneficios {
+      background: #f8f9fb;
+      padding: 40px 20px;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;	  
+    }
+	
+	.p_beneficios{
+		font-size: 22px;  /* aumenta o tamanho da letra */
+	  font-weight: 500; /* deixa mais encorpado */
+	  color: #333;
+	  text-align: center;
+	  margin-top: 20px;
+	  line-height: 1.5;
+	}
+	
+    .beneficios h2 {
+      color: #00a8ff;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .beneficios p {
+      max-width: 600px;
+      margin: 10px auto;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .provas {
+      padding: 40px 20px;
+    }
+
+    .provas h2 {
+      color: #00a8ff;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .comentario {
+      max-width: 600px;
+      margin: 10px auto;
+      background: #f1f9ff;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #dbeafe;
+      font-style: italic;
+      color: #444;
+	  font-size: 20px;
+    }
+
+		.icone {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;	  
+	  width: 40px;   /* tamanho do quadrado */
+	  height: 40px;
+	  border-radius: 8px; /* cantos arredondados */
+	  margin: 0 auto 10px auto; /* centraliza e dá espaço abaixo */
+	   width: 48px; /* tamanho da imagem dentro do ícone */
+	  height: 48px;
+	  margin-top: 32px;
+	}
+	
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+      padding-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="rdotm.png" alt="Logo" class="logo">
+    <h1>Pare de perder tempo adivinhando o que vende — veja o que tá dando dinheiro agora.</h1>
+  </header>
+
+  <p class="promessa">Em 10 minutos você tem sua primeira idéia de produto digital</p>
+  
+
+  <img src="mockup-hd.png" alt="Mockup Rastreador de Ofertas" class="mockup">
+
+<!-- ✅ SEÇÃO DE "SEGUIDOR POR" -->
+<div class="seguido-por">
+  <div class="marquee">
+    <div class="item">
+      <img src="https://i.pravatar.cc/60?img=2" alt="foto">
+      <span><b>Seguido por</b> Lázaro Bach</span>
+    </div>
+    <div class="item">
+      <img src="https://i.pravatar.cc/60?img=1" alt="foto">
+      <span><b>Seguido por</b> minFinch89</span>
+    </div>
+    <div class="item">
+      <img src="https://i.pravatar.cc/60?img=3" alt="foto">
+      <span><b>Seguido por</b> michMenezes1</span>
+    </div>
+	<div class="item">
+      <img src="https://i.pravatar.cc/60?img=49" alt="foto">
+      <span><b>Seguido por</b> lia_do__digital</span>
+    </div>
+	<div class="item">
+      <img src="https://i.pravatar.cc/60?img=57" alt="foto">
+      <span><b>Seguido por</b> offerblackreal</span>
+    </div>
+	<div class="item">
+      <img src="https://i.pravatar.cc/60?img=42" alt="foto">
+      <span><b>Seguido por</b> deborasecarem30d</span>
+    </div>
+    <div class="item">
+      <img src="https://i.pravatar.cc/60?img=67" alt="foto">
+      <span><b>e outros influenciadores</b> </span>
+    </div>
+	
+	
+  </div>
+</div>
+
+<style>
+  .seguido-por {
+    width: 100%;
+    overflow: hidden;
+    background: #f9fbff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 0;
+  }
+
+  .marquee {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+    animation: deslizar 30s linear infinite;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .item img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #00a8ff;
+    object-fit: cover;
+  }
+
+  @keyframes deslizar {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-600%); }
+  }
+</style>
+
+
+  <button class="btn" onclick="scrollToSection('beneficios')">Quero ter acesso</button>
+
+  <section id="beneficios" class="beneficios">
+    
+	<h1>O que o Rastreador faz por você</h1>
+	
+	<img class='icone' src="rocket_6480296.png" alt="logo">
+    <span class="p_beneficios">⚡ Revela todas as ofertas que estão vendendo muito <b>nesse exato momento</b>.</span>
+	
+	<img class='icone' src="rocket_6480296.png" alt="logo">	
+    <span class="p_beneficios">💡 Rastreia <b>infoprodutos escalados</b>, prontos pra você copiar.</span>
+	
+	<img class='icone' src="rocket_6480296.png" alt="logo">	
+    <span class="p_beneficios">📊 <b>Evita que você gaste meses</b> criando algo que ninguém compra.</span>
+	
+	<img class='icone' src="rocket_6480296.png" alt="logo">	
+    <span class="p_beneficios">🔥 Espione e copie as ofertas mais escaladas nesse momento no digital com o <b>Rastreador de ofertas ™ </b>.</span>
+	<br>
+    <button class="btn" onclick="scrollToSection('checkout')">Ver Ofertas</button>
+  </section>
+
+  <section class="provas">
+    <h1>O que dizem nossos clientes</h1>
+    <div class="comentario">“Tava travado há meses sem saber que produto fazer. Agora vejo o que tá bombando e copio o modelo.”</div>
+    <div class="comentario">“Antes eu gastava tempo demais com ideias aleatórias. Agora foco só nas que vendem.”</div>
+    <div class="comentario">“Achei meu primeiro produto com o Rastreador e vendi no primeiro dia!”</div>
+  </section>
+
+  <div id="checkout">
+    <button class="btn">Acessar o Rastreador Agora</button>
+  </div>
+
+
+<section style="font-family: 'Inter', sans-serif; background: #d6deed; text-align: center; padding: 20px 20px; border-radius: 12px; max-width: 500px; margin: 50px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; overflow: hidden;">
+  <h1 style="color: #008cff; font-size: 28px; font-weight: 800; margin-bottom: 10px;">
+    Conheça nosso <br> <span style="color:#0066ff;">Plano Turbo</span>
+  </h1>
+
+  <p style="font-style: italic; color: #0074ff; font-weight: 600; font-size: 22px; margin: 5px 0 25px;">
+    7 dias de acesso
+  </p>
+
+  <p style="font-size: 20px; margin-bottom: 10px;">
+    De <span style="text-decoration: line-through; ">R$ 29,90</span>
+  </p>
+
+  <p style="font-size: 26px; font-weight: 800; color: #00b300; margin: 0;">
+    por apenas R$ 19,90
+  </p>
+
+  <button class="botao-turbo" style="margin-top: 25px; background: linear-gradient(90deg, #00ff55, #00cc44); color: #fff; font-weight: 700; border: none; border-radius: 10px; padding: 16px 36px; cursor: pointer; font-size: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; position: relative; overflow: hidden;">
+    Quero começar
+  </button>
+
+  <p style="margin-top: 30px; font-size: 20px; color: #333; line-height: 1.7;"> <b>
+    💥 Acesso instantâneo<br>
+    🚀 Ofertas totalmente escaladas<br>
+    📈 Veja o faturamento de todos os produtores<br>
+    🌎 Todos os nichos liberados<br>
+    👀 Veja o número de acessos na oferta<br>
+    📋 Copie qualquer oferta ✔️</b>
+  </p>
+
+  <style>
+    .botao-turbo {
+      animation: brilho 2s infinite alternate;
+    }
+    @keyframes brilho {
+      0% {
+        box-shadow: 0 0 10px #00ff55, 0 0 20px #00cc44;
+        transform: scale(1);
+      }
+      100% {
+        box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff55;
+        transform: scale(1.05);
+      }
+    }
+    .botao-turbo:hover {
+      background: linear-gradient(90deg, #00ff77, #00cc55);
+    }
+  </style>
+</section>
+
+
+
+  <footer>
+    © 2025 Rastreador de Ofertas™ <br> Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

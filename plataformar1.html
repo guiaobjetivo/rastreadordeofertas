@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreador de Ofertas</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .logo {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      color: #00a8ff;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .barra-container {
+      width: 80%;
+      max-width: 600px;
+      background: #f1f1f1;
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 20px 0;
+      height: 20px;
+      box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
+    }
+    .barra {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00a8ff, #00ff99);
+      transition: width 0.2s;
+    }
+    .modo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #00a8ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0088cc;
+    }
+    .lista {
+      width: 90%;
+      max-width: 600px;
+      background: #f8f9fb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .oferta {
+      margin-bottom: 20px;
+    }
+    .oferta strong {
+      color: #00a8ff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .link {
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      display: block;
+      margin-top: 3px;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: auto;
+      background: #f1f1f1;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #e5e5e5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="rdo.png" alt="Logo" class="logo">
+    <h1>Rastreador de Ofertas</h1>
+  </header>
+
+  <div class="modo">
+    <label><input type="radio" name="modo" value="normal" checked> Normal</label>
+    <label><input type="radio" name="modo" value="turbo"> Turbo</label>
+  </div>
+
+  <div class="barra-container">
+    <div class="barra" id="barra"></div>
+  </div>
+
+  <button id="listarBtn">Listar Ofertas</button>
+
+  <div class="lista" id="lista"></div>
+
+  <footer>
+    <p>© 2025 Rastreador de Ofertas <br> Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const ofertas = [
+      { titulo: 'Designer de Unhas', link: 'https://www.desnail.site', acessos: 'ver acessos', stats: '10k-12k acessos | fatur.: 5k-50k mensal' },
+      { titulo: 'Ganhe 3x mais com anúncios online', link: 'https://www.des3x.com.br', acessos: 'ver acessos', stats: '8k-10k acessos | fatur.: 3k-40k mensal' },
+      { titulo: 'Seque a barriga até o verão', link: 'https://www.ssue.br', acessos: 'ver acessos', stats: '10k-12k acessos | fatur.: 5k-50k mensal' },
+      { titulo: 'A última escolha', link: 'https://www.aue.br', acessos: 'ver acessos', stats: '6k-9k acessos | fatur.: 2k-30k mensal' }
+    ];
+
+    const barra = document.getElementById('barra');
+    const listarBtn = document.getElementById('listarBtn');
+    const lista = document.getElementById('lista');
+
+    listarBtn.addEventListener('click', () => {
+      const modo = document.querySelector('input[name="modo"]:checked').value;
+      const duracao = modo === 'turbo' ? 10000 : 30000;
+      barra.style.width = '0%';
+      lista.innerHTML = '';
+
+      let progresso = 0;
+      const intervalo = setInterval(() => {
+        progresso += 100 / (duracao / 100);
+        barra.style.width = `${Math.min(progresso, 100)}%`;
+        if (progresso >= 100) {
+          clearInterval(intervalo);
+          mostrarOfertas();
+        }
+      }, 100);
+    });
+
+    function embaralhar(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function mostrarOfertas() {
+      const ofertasEmbaralhadas = embaralhar([...ofertas]); // cópia embaralhada
+      lista.innerHTML = `<p><strong>${ofertasEmbaralhadas.length}</strong> ofertas estão vendendo muito nos últimos 15 minutos:</p>`;
+
+      ofertasEmbaralhadas.forEach(oferta => {
+        const div = document.createElement('div');
+        div.classList.add('oferta');
+
+        const titulo = document.createElement('strong');
+        titulo.textContent = oferta.titulo;
+        titulo.addEventListener('click', () => window.open(oferta.link, '_blank'));
+
+        const link = document.createElement('a');
+        link.href = '#';
+        link.classList.add('link');
+        link.textContent = oferta.acessos;
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          link.textContent = oferta.stats;
+          link.style.cursor = 'default';
+		  link.style.textDecoration =  'none';
+		  link.style.fontWeight =  'bold';
+        });
+
+        const url = document.createElement('span');
+        url.textContent = oferta.link;
+        url.classList.add('link');
+
+        div.appendChild(titulo);
+        div.appendChild(url);
+        div.appendChild(link);
+
+        lista.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
